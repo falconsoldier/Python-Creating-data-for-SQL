@@ -1,0 +1,17 @@
+# First making a list of unique usernames
+
+x = ['Happy', 'Sad', 'Angry']
+y = ['Monkey', 'Lion', 'Pig']
+
+i = 0
+j = 0
+while i < 3:
+    while j < 3:
+        z = 'Insert into x[i] + ' ' + y[j]
+        print(z)
+        j += 1
+
+    i += 1
+    
+    
+  
