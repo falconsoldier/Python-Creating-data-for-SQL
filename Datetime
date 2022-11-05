@@ -1,9 +1,12 @@
+
 import random
 import datetime
 start_dt = datetime.datetime(2019, 1, 1, 0, 0, 0)
-end_dt = datetime.datetime(2020, 12, 31, 23, 59, 59)
+end_dt = datetime.datetime.now()
 time_between_dates = end_dt - start_dt
 seconds_between_dates = datetime.timedelta.total_seconds(time_between_dates)
-random_number_of_seconds = random.randrange(0, seconds_between_dates)
+seconds_int = int(seconds_between_dates)
+random_number_of_seconds = random.randrange(0, seconds_int)
 random_date = start_dt + datetime.timedelta(seconds=random_number_of_seconds)
 print(random_date)
+
