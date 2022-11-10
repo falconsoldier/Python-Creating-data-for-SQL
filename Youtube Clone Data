@@ -23,4 +23,52 @@ while i < 3:
     i += 1
     
 -------------------------------------------------------------------------------------------------------------------------------------
-  
+  #Create data for Username and video tables
+  # Ahhhhh, please don't judge this, it works, ok!!!
+import random
+import datetime
+start_dt = datetime.datetime(2019, 1, 1, 0, 0, 0)
+end_dt = datetime.datetime.now()
+time_between_dates = end_dt - start_dt
+seconds_between_dates = datetime.timedelta.total_seconds(time_between_dates)
+seconds_int = int(seconds_between_dates)
+
+x = ['Happy', 'Sad', 'Angry', 'Content', 'Tired', 'Cheery', 'Heavy', 'Beautiful', 'Cute', 'Corrupt', 'Wishful']
+y = ['Monkey', 'Lion', 'Pig', 'Rat', 'Tiger', 'Hound', 'Beaver']
+i = 0
+username_list = []
+while i < 11: #11
+    j = 0
+    while j < 7: #7
+        random_number_of_seconds = random.randrange(0, seconds_int)
+        ud = start_dt + datetime.timedelta(seconds=random_number_of_seconds)
+        uds = str(ud)
+        
+        z = '(\'' + x[i] + y[j] + '\', \'' + uds + '\'),'
+        username_list.append(z)
+        vid_count2 = 1
+        vid_count = random.randrange(0,5)
+        while vid_count < 6:
+            vid_url = ("www.youtube.com/" + str(random.randrange(1000000, 9999999)))
+            user_id = len(username_list)
+            views = random.randrange(0, 77)
+            vid_seconds = random.randrange(random_number_of_seconds, seconds_int)
+            vd = start_dt + datetime.timedelta(seconds=vid_seconds)
+            vds = str(vd)
+            vid_name = 'My Video Diary ' + str(vid_count2)
+            vid_count2 += 1
+            vid_count += 1
+            print('(\'' + str(user_id) + '\', \'' + vid_url + '\', \'' + vid_name + '\', \'' + str(views) + '\', \'' + vds + "),")
+            #print(vid_url)
+            #print(vid_name)
+            #print(views)
+            #print(vds)
+        
+        #print
+
+        #print(z)
+        j += 1
+    i += 1
+
+for l in username_list:
+    print(l)
